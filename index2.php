@@ -11,7 +11,7 @@
   <!-- Mail Style Css -->
   <link rel="stylesheet" href="Assets/css/style.css">
 
-  <title>Digital Dairy</title>
+  <title>Pallavi Doremon</title>
 </head>
 
 <body>
