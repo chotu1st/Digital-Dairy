@@ -1,0 +1,169 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+* {
+  /* Chrome, Safari, Edge, Opera */
+  /* Firefox */
+}
+* input::-webkit-outer-spin-button,
+* input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+* input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.navbar {
+  padding-left: 1em;
+  padding-right: 1em;
+}
+.navbar .navbar-brand .brand-logo {
+  width: 200px;
+  height: auto;
+  animation: bounce 1.4s;
+  animation-direction: alternate;
+  animation-timing-function: cubic-bezier(0.5, 0.05, 1, 0.5);
+  animation-iteration-count: infinite;
+}
+.navbar .nav-link {
+  color: white;
+  font-weight: 600;
+}
+.navbar span .btn-signin {
+  border: 1px solid #62b4fe;
+  box-sizing: border-box;
+  border-radius: 5px;
+  margin: 0 0.6rem;
+  background-color: #62b4fe;
+  color: white;
+  padding: 8px 18px;
+}
+.navbar span .btn-signin:hover {
+  border: 1px solid white;
+  background-color: white;
+  color: #62b4fe;
+}
+.navbar span .white {
+  background-color: white;
+  border: 1px solid white;
+  color: #62b4fe;
+}
+.navbar span .white:hover {
+  border: 1px solid #62b4fe;
+  background-color: #62b4fe;
+  color: white;
+}
+
+@keyframes bounce {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(16px, 0, 0);
+  }
+}
+.Main-body {
+  background-image: url(../Img/home-page-bg.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 87vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.modal .modal-body .preview {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.modal .modal-body .preview img {
+  border: 4px solid #ff1493;
+  border-radius: 50%;
+  background-color: black;
+  display: none;
+}
+.modal .modal-body .bulb-icon {
+  float: right;
+  margin-top: -2em;
+  margin-right: 0.6em;
+  cursor: pointer;
+  pointer-events: none;
+}
+.modal .modal-body .bulb-icon .onBulb {
+  width: 24px;
+  height: auto;
+  display: none;
+}
+.modal .modal-body .bulb-icon .offBulb {
+  width: 24px;
+  height: auto;
+  display: block;
+}
+.modal .modal-body #errorEmail {
+  font-size: 12px;
+  margin-left: 0.4em;
+  margin-top: 0.6em;
+}
+.modal .modal-body .otp {
+  display: flex;
+  justify-content: center;
+}
+.modal .modal-body .otp .otp-box {
+  width: 2em;
+  height: 3em;
+  margin: 0.5em 0.6em;
+  border-radius: 4px;
+  outline: none;
+  border: 0.5px solid lightgrey;
+  text-align: center;
+  font-weight: 600;
+  font-size: 18px;
+  color: #ff1493;
+}
+.modal .modal-body .otp .otp-box:focus {
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.35);
+}
+.modal .modal-body #captchaBackground {
+  height: auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.modal .modal-body #captcha {
+  background-color: #fff;
+  transition: 0.6s ease;
+  width: 120px;
+  height: 60px;
+  border: 1px dashed lightgrey;
+}
+.modal .modal-body #refreshButton {
+  border: none;
+  outline: none;
+  background: transparent;
+  transition: 0.8s ease;
+  position: relative;
+}
+.modal .modal-body #refreshButton img {
+  width: 20px;
+  height: 20px;
+}
+.modal .modal-body #refreshButton :hover {
+  transform: rotate(360deg);
+  transition: 1.2s ease-in-out;
+}
+.modal .modal-body #textBox {
+  height: 30px;
+  width: 120px;
+  border: none;
+  border-bottom: 1px solid #ff1493;
+  color: #ff1493;
+  text-align: center;
+  font-size: 18px;
+  outline: none;
+}
+
+/*# sourceMappingURL=style.css.map */
