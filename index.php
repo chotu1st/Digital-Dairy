@@ -23,7 +23,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.html">
-                <img src="Assets/icon/Digital-Diary.png" class="brand-logo" alt="Digital-Diary">              
+                <img src="Assets/icon/Digital-Diary.png" class="brand-logo" alt="Digital-Diary">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
                 aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -141,53 +141,85 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <div class="preview">
-                        <img id="file-ip-1-preview" width="150px" height="150px">
-                    </div>
-                    <input type="file" id="file-ip-1" accept="image/*" onchange="showPreview(event);">
-                    <div class="mb-0">
-                        <label for="" class="form-label">Name</label>
-                        <input type="text" class="form-control" id="name" placeholder="Ex -Kavita, Pallavi" required>
-                    </div>
-                    <div class="mb-0">
-                        <label for="" class="form-label">Gender</label>
-                        <div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="sex" id="inlineRadio1" value="Male">
-                                <label class="form-check-label" for="inlineRadio1">Male</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="sex" id="inlineRadio2"
-                                    value="Female">
-                                <label class="form-check-label" for="inlineRadio2">Female</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="sex" id="inlineRadio3" value="Other">
-                                <label class="form-check-label" for="inlineRadio3">Other</label>
+                    <form action="code.php" method="POST">
+                        <div class="preview">
+                            <img id="file-ip-1-preview" width="150px" height="150px">
+                        </div>
+                        <!-- <input type="file" id="file-ip-1" accept="image/*" onchange="showPreview(event);"> -->
+
+                        <div class="upload-btn-wrapper" id="upload-btn-wrapper">
+                            <button class="btns" id="btns"><img src="Assets/icon/dpUpload.png" alt="+"></button>
+                            <input type="file" name="upload" id="file-ip-1" accept="image/*"
+                                onchange="showPreview(event);" />
+                        </div>
+
+
+                        <div class="mb-0">
+                            <label for="" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="name" name="name"
+                                placeholder="Ex -Kavita, Pallavi" required>
+                        </div>
+                        <div class="mb-0">
+                            <label for="" class="form-label">Gender</label>
+                            <div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="sex" id="inlineRadio1"
+                                        value="Male">
+                                    <label class="form-check-label" for="inlineRadio1">Male</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="sex" id="inlineRadio2"
+                                        value="Female">
+                                    <label class="form-check-label" for="inlineRadio2">Female</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="sex" id="inlineRadio3"
+                                        value="Other">
+                                    <label class="form-check-label" for="inlineRadio3">Other</label>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="mb-0">
-                        <label for="" class="form-label">Name</label>
-                        <select class="form-select" aria-label="Default select example">
-                            <option disabled selected>Select Your Age Group</option>
-                            <option value="0-17">Below than 18 Years</option>
-                            <option value="18-24">Between 18 to 25 Years</option>
-                            <option value="25-34">Between 25 to 35 Years</option>
-                            <option value="35-100">Above 35 Years</option>
-                        </select>
-                    </div>
-                    <div class="mb-0">
-                        <label for="" class="form-label">Contact</label>
-                        <input type="number" class="form-control" id="contact" minlength="10" maxlength="10"
-                            placeholder="9111525164" required>
-                    </div>
-                    <div class="mb-0">
-                        <label for="exampleFormControlInput1" class="form-label">Email address</label>
-                        <input type="email" class="form-control" id="email" onkeyup="ValidateEmail(this.value)"
-                            placeholder="doremon@mitstudent.co.in" required>
-                        <span id="errorEmail"></span>
-                    </div>
+                        <div class="mb-0">
+                            <label for="" class="form-label">Age Group</label>
+                            <select class="form-select" name="age" aria-label="Default select example">
+                                <option disabled selected>Select Your Age Group</option>
+                                <option value="0-17">Below than 18 Years</option>
+                                <option value="18-24">Between 18 to 25 Years</option>
+                                <option value="25-34">Between 25 to 35 Years</option>
+                                <option value="35-100">Above 35 Years</option>
+                            </select>
+                        </div>
+                        <div class="mb-0">
+                            <label for="" class="form-label">Purpose</label>
+                            <select class="form-select" name="purpose" aria-label="Default select example">
+                                <option disabled selected>Select Your Age Group</option>
+                                <option value="personal">Personal</option>
+                                <option value="office">Office</option>
+                            </select>
+                        </div>
+                        <div class="mb-0">
+                            <label for="" class="form-label">Contact</label>
+                            <input type="number" class="form-control" id="contact" name="contact" minlength="10"
+                                maxlength="10" placeholder="9111525164" required>
+                        </div>
+                        <div class="mb-0">
+                            <label for="exampleFormControlInput1" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="email" onkeyup="ValidateEmail(this.value)"
+                                placeholder="doremon@mitstudent.co.in" required>
+                            <span id="errorEmail"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput2" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="password" placeholder="Dv@xxx*******"
+                                minlength="5" maxlength="10" name="password" disabled required>
+                            <span class="bulb-icon" id="bulb-icon" onclick="showPassword()">
+                                <img src="./Assets/Img/bulb-offpng.png" class="offBulb" id="off" alt="">
+                                <img src="./Assets/Img/bulb-on.png" class="onBulb" id="on" alt="">
+                            </span>
+                        </div>
+
+                        <input type="submit" name="register" value="Save">
+                    </form>
                 </div>
                 <div class="modal-footer">
                     <button class="btn btn-primary" data-bs-target="#signUP2" data-bs-toggle="modal"
@@ -224,27 +256,29 @@
 
 
     <script>
+    function showPreview(event) {
+        if (event.target.files.length > 0) {
+            var src = URL.createObjectURL(event.target.files[0]);
+            var preview = document.getElementById("file-ip-1-preview");
+
+            let uploadBtn = document.getElementById("btns");
+            let wrapper = document.getElementById("upload-btn-wrapper");
+
+            preview.src = src;
+            preview.style.display = "block";
+
+            
+                uploadBtn.style.position = "absolute";
+                uploadBtn.style.zIndex = "99";
+                uploadBtn.style.transform = "translate(3em,-2.5em)";
+                uploadBtn.style.boxShadow = "0px 0px 14px rgba(0, 0, 0, 0.38)";
+
+                wrapper.style.position = "unset";
+            
 
 
-        function showPreview(event) {
-            if (event.target.files.length > 0) {
-                var src = URL.createObjectURL(event.target.files[0]);
-                var preview = document.getElementById("file-ip-1-preview");
-                preview.src = src;
-                preview.style.display = "block";
-            }
         }
-
-
-
-
-
-
-
-
-
-
-
+    }
     </script>
 </body>
 

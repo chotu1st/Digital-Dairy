@@ -103,6 +103,42 @@ $pink-color: #ff1493;
             display: none;
         }
     }
+
+    .upload-btn-wrapper {
+      position: relative;
+      overflow: hidden;
+      // display: inline-block;
+      width: 100%;
+      display: flex;
+      justify-content: center;    
+    }
+    
+    .btns {
+      border: 2px solid $pink-color;      
+      padding: 4px;
+      border-radius: 50%;      
+      background-color: #fff;    
+   
+      img{
+        width: 20px;
+        height: 20px;
+        margin: 2px;
+
+        &:hover{
+          cursor: pointer;         
+        }
+      }
+      
+    }
+    
+    .upload-btn-wrapper input[type=file]{
+      font-size: 100px;
+      position: absolute;
+      left: 0;
+      top: 0;
+      opacity: 0;
+    }
+
     .bulb-icon {
       float: right;
       margin-top: -2em;

@@ -84,6 +84,34 @@
   background-color: black;
   display: none;
 }
+.modal .modal-body .upload-btn-wrapper {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.modal .modal-body .btns {
+  border: 2px solid #ff1493;
+  padding: 4px;
+  border-radius: 50%;
+  background-color: #fff;
+}
+.modal .modal-body .btns img {
+  width: 20px;
+  height: 20px;
+  margin: 2px;
+}
+.modal .modal-body .btns img:hover {
+  cursor: pointer;
+}
+.modal .modal-body .upload-btn-wrapper input[type=file] {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
 .modal .modal-body .bulb-icon {
   float: right;
   margin-top: -2em;
