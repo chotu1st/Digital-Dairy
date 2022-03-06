@@ -1,3 +1,6 @@
+<?php
+    include('include/connection.php');   
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,7 +23,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.html">
-                <img src="Assets/icon/Digital-Diary.png" class="brand-logo" alt="Digital-Diary">
+                <img src="Assets/icon/Digital-Diary.png" class="brand-logo" alt="Digital-Diary">              
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
                 aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
