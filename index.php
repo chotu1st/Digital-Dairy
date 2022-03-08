@@ -1,23 +1,6 @@
 <?php
-    include('include/connection.php');   
+    include('include/header.php');   
 ?>
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="./Assets/icon/DD-ico.png" type="image/png">
-    <!-- Bootstrap CSS -->
-    <link href="Assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Mail Style Css -->
-    <link rel="stylesheet" href="Assets/css/style.css">
-
-    <title>Digital Dairy</title>
-</head>
-
-<body>
 
     <!-- Navbar Code Start -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -60,19 +43,20 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalToggleLabel">Sign In</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="resetForm(this.id)" id="closeLogin"></button>
                 </div>
                 <div class="modal-body">
+                    <form action="" id="formLogin">
                     <div class="mb-0">
-                        <label for="exampleFormControlInput1" class="form-label">Email address</label>
+                        <label for="exampleFormControlInput1" class="form-label">Email address<span class="star">*</span></label>
                         <input type="email" class="form-control" id="email" onkeyup="ValidateEmail(this.value)"
                             placeholder="doremon@mitstudent.co.in" required>
                         <span id="errorEmail"></span>
                     </div>
                     <div class="mb-3">
-                        <label for="exampleFormControlInput2" class="form-label">Password</label>
-                        <input type="password" class="form-control" id="password" placeholder="Dv@xxx*******"
-                            minlength="5" maxlength="10" disabled required>
+                        <label for="exampleFormControlInput2" class="form-label">Password<span class="star">*</span></label>
+                        <input type="password" class="form-control" id="password" placeholder="Dv@xxx****" minlength="5"
+                            maxlength="10" disabled required>
                         <span class="bulb-icon" id="bulb-icon" onclick="showPassword()">
                             <img src="./Assets/Img/bulb-offpng.png" class="offBulb" id="off" alt="">
                             <img src="./Assets/Img/bulb-on.png" class="onBulb" id="on" alt="">
@@ -92,9 +76,11 @@
 
                     </div>
                     <div class="modal-footer">
-                        <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal"
-                            data-bs-dismiss="modal">Open second modal</button>
+                          <!--<button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal"
+                           data-bs-dismiss="modal">Open second modal</button> -->
+                            <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" id="loginbtn" data-bs-toggle="modal" data-bs-dismiss="modal">Login Me</button>
                     </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -107,25 +93,27 @@
                     <h5 class="modal-title" id="exampleModalToggleLabel2">OTP Verification</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
+               <div class="modal-body">
                     <div class="otp">
-                        <input type="number" class="otp-box" id="value1"
+                        <form action="" id="formOTP">
+                        <input type="number" class="otp-box" id="val1"
                             oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
-                            maxlength="1" onkeyup="move(event, '', 'value1','value2')">
-                        <input type="number" class="otp-box" id="value2"
+                            maxlength="1" onkeyup="move(event, '', 'val1','val2')">
+                        <input type="number" class="otp-box" id="val2"
                             oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
-                            maxlength="1" onkeyup="move(event, 'value1', 'value2','value3')">
-                        <input type="number" class="otp-box" id="value3"
+                            maxlength="1" onkeyup="move(event, 'val1', 'val2','val3')">
+                        <input type="number" class="otp-box" id="val3"
                             oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
-                            maxlength="1" onkeyup="move(event, 'value2', 'value3','value4')">
-                        <input type="number" class="otp-box" id="value4"
+                            maxlength="1" onkeyup="move(event, 'val2', 'val3','val4')">
+                        <input type="number" class="otp-box" id="val4"
                             oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
-                            maxlength="1" min="1" onkeyup="move(event, 'value3', 'value4','')">
+                            maxlength="1" min="1" onkeyup="move(event, 'val3', 'val4','')">
+                        </form>
+                        
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal"
-                        data-bs-dismiss="modal">Back to first</button>
+                    <button class="btn btn-primary" data-bs-dismiss="modal" onclick="otpverify()">Verify</button>
                 </div>
             </div>
         </div>
@@ -138,10 +126,10 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="signUPLabel">Sign Up</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" onclick="resetForm(this.id)" id="closeSignup" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form action="code.php" method="POST">
+                    <form action="code.php" method="POST" id="formSignUp">
                         <div class="preview">
                             <img id="file-ip-1-preview" width="150px" height="150px">
                         </div>
@@ -155,25 +143,25 @@
 
 
                         <div class="mb-0">
-                            <label for="" class="form-label">Name</label>
-                            <input type="text" class="form-control" id="name" name="name"
+                            <label for="" class="form-label">Name <span class="star">*</span></label>
+                            <input type="text" class="form-control" id="name" name="name" maxlength="40"
                                 placeholder="Ex -Kavita, Pallavi" required>
                         </div>
                         <div class="mb-0">
-                            <label for="" class="form-label">Gender</label>
-                            <div>
+                            <label for="" class="form-label">Gender<span class="star">*</span></label>
+                            <div class=borderOfRadio>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="sex" id="inlineRadio1"
+                                    <input class="form-check-input" type="radio" name="sex" id="sex"
                                         value="Male">
                                     <label class="form-check-label" for="inlineRadio1">Male</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="sex" id="inlineRadio2"
+                                    <input class="form-check-input" type="radio" name="sex" id="sex"
                                         value="Female">
                                     <label class="form-check-label" for="inlineRadio2">Female</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="sex" id="inlineRadio3"
+                                    <input class="form-check-input" type="radio" name="sex" id="sex"
                                         value="Other">
                                     <label class="form-check-label" for="inlineRadio3">Other</label>
                                 </div>
@@ -181,7 +169,7 @@
                         </div>
                         <div class="mb-0">
                             <label for="" class="form-label">Age Group</label>
-                            <select class="form-select" name="age" aria-label="Default select example">
+                            <select class="form-select" name="age" id="age" aria-label="Default select example">
                                 <option disabled selected>Select Your Age Group</option>
                                 <option value="0-17">Below than 18 Years</option>
                                 <option value="18-24">Between 18 to 25 Years</option>
@@ -191,39 +179,39 @@
                         </div>
                         <div class="mb-0">
                             <label for="" class="form-label">Purpose</label>
-                            <select class="form-select" name="purpose" aria-label="Default select example">
+                            <select class="form-select" name="purpose" id="purpose" aria-label="Default select example">
                                 <option disabled selected>Select Your Age Group</option>
                                 <option value="personal">Personal</option>
                                 <option value="office">Office</option>
                             </select>
                         </div>
                         <div class="mb-0">
-                            <label for="" class="form-label">Contact</label>
-                            <input type="number" class="form-control" id="contact" name="contact" minlength="10"
-                                maxlength="10" placeholder="9111525164" required>
+                            <label for="" class="form-label">Contact<span class="star">*</span></label>
+                            <input type="number" class="form-control" id="contact" name="contact" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==10) return false;"
+                                placeholder="9111525164" required>
                         </div>
                         <div class="mb-0">
-                            <label for="exampleFormControlInput1" class="form-label">Email address</label>
-                            <input type="email" class="form-control" id="email" onkeyup="ValidateEmail(this.value)"
+                            <label for="exampleFormControlInput1" class="form-label">Email address<span class="star">*</span></label>
+                            <input type="email" class="form-control" id="email2" onkeyup="ValidateEmail(this.value)"
                                 placeholder="doremon@mitstudent.co.in" required>
-                            <span id="errorEmail"></span>
+                            <span id="errorEmail2"></span>
                         </div>
                         <div class="mb-3">
-                            <label for="exampleFormControlInput2" class="form-label">Password</label>
-                            <input type="password" class="form-control" id="password" placeholder="Dv@xxx*******"
+                            <label for="exampleFormControlInput2" class="form-label">Password<span class="star">*</span></label>
+                            <input type="password" class="form-control" id="password2" placeholder="Dv@xxx****"
                                 minlength="5" maxlength="10" name="password" disabled required>
-                            <span class="bulb-icon" id="bulb-icon" onclick="showPassword()">
-                                <img src="./Assets/Img/bulb-offpng.png" class="offBulb" id="off" alt="">
-                                <img src="./Assets/Img/bulb-on.png" class="onBulb" id="on" alt="">
+                            <span class="bulb-icon" id="bulb-icon2" onclick="showPassword()">
+                                <img src="./Assets/Img/bulb-offpng.png" class="offBulb" id="off2" alt="">
+                                <img src="./Assets/Img/bulb-on.png" class="onBulb" id="on2" alt="">
                             </span>
                         </div>
 
-                        <input type="submit" name="register" value="Save">
+                        <!-- <input type="submit" name="register" onclick="generateOTP()" value="Save"> -->
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button class="btn btn-primary" data-bs-target="#signUP2" data-bs-toggle="modal"
-                        data-bs-dismiss="modal">Open second modal</button>
+                    <button class="btn btn-primary" data-bs-target="#signUP2" id="signupbtn" data-bs-toggle="modal"
+                        data-bs-dismiss="modal">Sign Up Me</button>
                 </div>
             </div>
         </div>
@@ -236,11 +224,26 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    Hide this modal and show the first with the button below.
+                    <div class="otp">
+                        <form action="" id="formOTP">
+                        <input type="number" class="otp-box" id="value1"
+                            oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                            maxlength="1" onkeyup="move(event, '', 'value1','value2')">
+                        <input type="number" class="otp-box" id="value2"
+                            oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                            maxlength="1" onkeyup="move(event, 'value1', 'value2','value3')">
+                        <input type="number" class="otp-box" id="value3"
+                            oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                            maxlength="1" onkeyup="move(event, 'value2', 'value3','value4')">
+                        <input type="number" class="otp-box" id="value4"
+                            oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                            maxlength="1" min="1" onkeyup="move(event, 'value3', 'value4','')">
+                        </form>
+                        
+                    </div>
                 </div>
                 <div class="modal-footer">
-                    <button class="btn btn-primary" data-bs-target="#signUP" data-bs-toggle="modal"
-                        data-bs-dismiss="modal">Back to first</button>
+                    <button class="btn btn-primary" data-bs-dismiss="modal" onclick="otpverify()">Verify</button>
                 </div>
             </div>
         </div>
@@ -248,38 +251,9 @@
 
     <!-- -------------------------Sign Up Modal  End------------------------------------------->
     <!-- Modal for Sign In  End-->
-    <script src="./Assets/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="./Assets/js/EmailValidator.js"></script>
-    <script src="./Assets/js/ShowPassword.js"></script>
-    <script src="./Assets/js/OTPfocus.js"></script>
-    <script src="./Assets/js/Captcha.js"></script>
+    
 
 
-    <script>
-    function showPreview(event) {
-        if (event.target.files.length > 0) {
-            var src = URL.createObjectURL(event.target.files[0]);
-            var preview = document.getElementById("file-ip-1-preview");
-
-            let uploadBtn = document.getElementById("btns");
-            let wrapper = document.getElementById("upload-btn-wrapper");
-
-            preview.src = src;
-            preview.style.display = "block";
-
-            
-                uploadBtn.style.position = "absolute";
-                uploadBtn.style.zIndex = "99";
-                uploadBtn.style.transform = "translate(3em,-2.5em)";
-                uploadBtn.style.boxShadow = "0px 0px 14px rgba(0, 0, 0, 0.38)";
-
-                wrapper.style.position = "unset";
-            
-
-
-        }
-    }
-    </script>
-</body>
-
-</html>
+<?php
+    include('include/footer.php');   
+?>

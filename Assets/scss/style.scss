@@ -139,6 +139,25 @@ $pink-color: #ff1493;
       opacity: 0;
     }
 
+    .borderOfRadio{
+      padding: 6px 8px;
+      outline: aliceblue;
+      border: 1px solid #ced4da;
+      border-radius: 4px;
+      appearance: none;
+      border-radius: 0.25rem;
+      transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    
+
+
+    &:hover{
+        background-color: #fff;
+        border-color: #86b7fe;
+        outline: 0;
+        box-shadow: 0 0 0 0.25rem rgb(13 110 253 / 25%);
+        }
+    }
+
     .bulb-icon {
       float: right;
       margin-top: -2em;
@@ -233,6 +252,18 @@ $pink-color: #ff1493;
     }
     
 
-    //---------------------------------------------------------
+    .modal-footer{
+      #loginbtn{
+        display: none;
+      }
+    }
+
+    .star{
+      color: red;
+      font-size: 18px;
+      margin-left: 1px;
+    }
   }
+
+  
 }
