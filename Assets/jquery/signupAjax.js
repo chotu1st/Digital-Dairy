@@ -5,7 +5,7 @@ $(document).ready(function() {
         var name = $("#name").val();
         var email = $("#email2").val();
         var age = $("#age").val();
-        var sex = $("#sex").val();
+        var sex = $("input[name='sex']").val();
         var purpose = $("#purpose").val();
         var contact = $("#contact").val();
         var password = $("#password2").val();
@@ -18,7 +18,7 @@ $(document).ready(function() {
         }
         else{
             document.getElementById("formSignUp").reset();
-            document.getElementById("formOTP").reset();
+            document.getElementById("formOTP2").reset();
         }
 
         $.ajax({

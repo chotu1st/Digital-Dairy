@@ -7,7 +7,7 @@
     <script src="./Assets/js/OTPfocus.js"></script>
     <script src="./Assets/js/Captcha.js"></script>
     <script src="./Assets/js/uploadImgPreview.js"></script>
-    <script src="./Assets/js/signupAjax.js"></script>
+    <script src="./Assets/jquery/signupAjax.js"></script>
     <script src="./Assets/js/otpVerify.js"></script>
 
 
