@@ -1,7 +1,7 @@
 <?php
 	
-      include('../include/connection.php');
-
+    include('../include/connection.php');
+    session_start();
 
     $name= $_POST['name'];
     $sex= $_POST['sex'];

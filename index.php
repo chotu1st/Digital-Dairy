@@ -1,5 +1,6 @@
 <?php
     include('include/header.php');   
+    session_start();
 ?>
 
 <!-- Navbar Code Start -->
@@ -29,7 +30,7 @@
 <!-- Body Start -->
 <div class="Main-body container-fluid">
     <div class="text-center">
-        <h1 class="text-primary">Welcome to Digital Dairy</h1>
+        <h1 class="text-primary">Welcome to Digital Diary</h1>
         <h6 class="text-success">Here you can Save your personal Records and Access it from any where ...</h6>
     </div>
 
@@ -85,6 +86,7 @@
                            data-bs-dismiss="modal">Open second modal</button> -->
                         <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" id="loginbtn"
                             data-bs-toggle="modal" data-bs-dismiss="modal">Login Me</button>
+
                     </div>
                 </form>
             </div>
@@ -119,7 +121,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button class="btn btn-primary" data-bs-dismiss="modal" onclick="otpverify()">Verify</button>
+                <button class="btn btn-primary" data-bs-dismiss="modal" id="otpVerify" >Verify</button>
             </div>
         </div>
     </div>
@@ -249,7 +251,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button class="btn btn-primary" data-bs-dismiss="modal" onclick="otpverify()">Verify</button>
+                <button class="btn btn-primary" data-bs-dismiss="modal" id="otpVerifySignup">Verify</button>
             </div>
         </div>
     </div>

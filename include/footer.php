@@ -8,6 +8,7 @@
     <script src="./Assets/js/Captcha.js"></script>
     <script src="./Assets/js/uploadImgPreview.js"></script>
     <script src="./Assets/jquery/signupAjax.js"></script>
+    <script src="./Assets/jquery/loginAjax.js"></script>
     <script src="./Assets/js/otpVerify.js"></script>
 
 

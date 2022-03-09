@@ -1,10 +1,13 @@
 <?php
+    include('include/security.php');
     include('include/header.php');   
+    
+    session_start();
 ?>
 <!-- Navbar Code Start -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="index.html">
+        <a class="navbar-brand" href="index.php">
             <img src="Assets/icon/Digital-Diary.png" class="brand-logo" alt="Digital-Diary">
         </a>
 
@@ -18,7 +21,7 @@
                 <div class="dropdown">
                     <button class="dp-btn dropdown-toggle" type="button" id="dropdownMenuButton2"
                         data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="./Assets/img/jyoti.jpg" alt="User-DP" /> Anmol Ji
+                        <img src="./Assets/img/jyoti.jpg" alt="User-DP" /> <?php echo $_SESSION['name']; ?>
                     </button>
                     <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end"
                         aria-labelledby="dropdownMenuButton2">
@@ -26,7 +29,11 @@
                         <li>
                             <hr class="dropdown-divider">
                         </li>
-                        <li><a class="dropdown-item" href="#">Logout</a></li>
+                        <li>
+                        <form method="Post" action="Ajax_Php/logout.php">
+                            <input class="dropdown-item" type="submit" value="Logout Me" name="logout">
+                        </form>
+                            
                     </ul>
                 </div>
             </span>
