@@ -46,7 +46,7 @@ $(document).ready(function () {
 
     if (getOtp2 === newotp2){
 
-      alert("OTP Verified");
+      // alert("OTP Verified");
       localStorage.removeItem("newOTP");
 
       var email = localStorage.getItem("email");
@@ -61,7 +61,7 @@ $(document).ready(function () {
         },
         cache: false,
         success: function (data) {
-           alert(data);
+          //  alert(data);
            localStorage.removeItem("email");
            window.open("home.php","_self");
             
@@ -91,7 +91,7 @@ $(document).ready(function () {
    
     if (getOtp === newotp)
      {
-        alert("OTP Verified");
+        // alert("OTP Verified");
         localStorage.removeItem("newOTP");
         $("#exampleModalToggle").modal("show"); //code checking if not working then remove it
     }

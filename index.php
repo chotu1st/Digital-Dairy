@@ -1,7 +1,13 @@
 <?php
-    include('include/header.php');   
-    session_start();
-?>
+error_reporting(0);
+    include('include/header.php');  
+    session_start();	
+
+	if($_SESSION['userid'])
+	{
+		header('Location: home.php');
+	}
+ ?>
 
 <!-- Navbar Code Start -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -13,7 +19,7 @@
                         aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">                        
                         <span class="float-end d-flex ms-auto">
                             <a class="nav-link btn-signin" data-bs-toggle="modal" href="#exampleModalToggle" role="button">Sign
                                 In</a>

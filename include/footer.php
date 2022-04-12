@@ -1,5 +1,6 @@
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script> -->
+    <Script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"> </script>
 
     <script src="./Assets/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="./Assets/js/EmailValidator.js"></script>
@@ -10,6 +11,7 @@
     <script src="./Assets/jquery/signupAjax.js"></script>
     <script src="./Assets/jquery/loginAjax.js"></script>
     <script src="./Assets/js/otpVerify.js"></script>
+   
 
 
     <script>
@@ -25,6 +27,8 @@
             document.getElementById("formSignUp").reset();
         }
     }
+
+    
 
    
     </script>

@@ -6,7 +6,7 @@ $(document).ready(function() {
         var email = $("#email").val();        
         var password = $("#password").val();
         var status = "userCheck";
-        console.log("ajax works");       
+        // console.log("ajax works");       
         
        
        
@@ -41,11 +41,11 @@ $(document).ready(function() {
 
                 localStorage.setItem("newOTP", OTP);
                 console.log(OTP);
-                console.log(data);
+                // console.log(data);
                 if(data != "loginFailed")
                 {
                     localStorage.setItem("email", email);
-                    alert(email);
+                    // alert(email);
                 }
                 
                 

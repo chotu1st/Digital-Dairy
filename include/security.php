@@ -5,5 +5,7 @@
 	{
 		header('Location: index.php');
 	}
+	
+	
 
 ?>

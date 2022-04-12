@@ -25,6 +25,9 @@ $pink-color: #ff1493;
   -webkit-touch-callout: none; // this is for iOS safari
   -ms-user-select: none;
   user-select: none; // not defined but this works on chrome and some other browsers
+
+
+  overflow: hidden;
 }
 
 .navbar {
@@ -292,17 +295,61 @@ $pink-color: #ff1493;
 
 .playground{
   margin: 5em;
-  border: 4px solid black;
+  // border: 4px solid black;
 
   .tab-content{
     padding: 3em 1em;
+
+
+    .homeTab-view{
+      display: flex;
+      flex-direction: row;
+
+      &-userdp{
+        img{
+          width: 14em;
+          height: auto;
+          border-radius: 6px;
+        }
+       
+      }
+
+      &-userdetails{
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+    
+        padding-left:2em;
+        h1{
+            color: $pink-color;
+            line-height:2rem;
+        }
+        h5{
+          color: #000;
+          line-height:1.5rem;
+          font-weight: 400;
+        }
+      }
+    }
 
     .noteTab-view{
       display: flex;
       flex-direction: row;
 
       &-left{
-          width: 30%;
+          width: 30%;         
+        .noteMSg{
+          font-size: 12px;
+          color: #cacac2;
+        }  
+        .savebtn{
+         
+          input{
+            width: 100%;           
+          }
+
+        }
+          
       }
       &-right{
         border: 1px solid lightslategrey;
@@ -311,6 +358,43 @@ $pink-color: #ff1493;
         width: 70%;
         margin: 0px 1em;
       }
+    }
+
+    .adminTab-view{
+        width: 100%;
+      .adminTab-view-top{
+        padding: 2rem 0;
+        form{
+          display: flex;
+          flex-direction: row;
+
+          input[type=text]{
+            min-width: 18em;
+            max-width: 22em;
+            margin-right: 1rem;
+          }
+        }
+      }
+
+      .adminTab-view-bottom{
+        input[type=text]{
+          padding: 6px 10px;
+          border: 1px solid lightgrey;
+          outline: none;
+          border-radius: 4px;
+        }
+        textarea{
+          overflow: hidden;
+        }
+        #deleteBtn,#updateBtn{
+        
+            cursor: pointer;
+          
+        }
+
+        
+      }
+
     }
   }
 }

@@ -7,6 +7,9 @@ function move(e, p, c, n) {
         if (n !== "") {
             document.getElementById(n).focus();
         }
+        else{
+            document.getElementById("otpVerify").focus();
+        }
     }
 
     if (e.key === "Backspace") {
