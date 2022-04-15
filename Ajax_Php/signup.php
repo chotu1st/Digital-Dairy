@@ -24,7 +24,20 @@
 
                     if (mysqli_query($con, $sql2)) {
                         // echo json_encode(array("statusCode"=>200));
-                         echo 'userSaved';
+                        $query = "SELECT userID FROM `users` WHERE email = '$email'";
+                        $result = mysqli_query($con, $query);
+                    
+                        $row = mysql_fetch_array($result);
+
+                        $userID = $row['userID'];
+
+                        $sql3 = "INSERT INTO `category`( `catergory`, `userid`) VALUES ('Personal','$userID')";
+                        $result3 = mysqli_query($con, $sql3);
+                        
+                        if($result3){
+                            echo 'userSaved';
+                        }
+                         
                     } 
                     else {
                         // echo json_encode(array("statusCode"=>201));

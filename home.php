@@ -10,37 +10,60 @@
             <img src="Assets/icon/Digital-Diary.png" class="brand-logo" alt="Digital-Diary">
         </a>
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+        <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
             aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
-        </button>
+        </button> -->
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <span class="ms-auto">
-                <div class="dropdown">
-                    <button class="dp-btn dropdown-toggle" type="button" id="dropdownMenuButton2"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="./Assets/img/jyoti.jpg" alt="User-DP" /> <?php echo $_SESSION['name']; ?>
-                    </button>
-                    <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end"
-                        aria-labelledby="dropdownMenuButton2">
-                        <li><a class="dropdown-item active" href="#">Profile</a></li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-                        <li>
-                            <form method="Post" action="Ajax_Php/logout.php">
-                                <input class="dropdown-item" type="submit" value="Logout Me" name="logout">
-                            </form>
+        <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <span class="ms-auto"> -->
+        <!-- <div class="dropdown">
+            <button class="dp-btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                <img src="./Assets/img/jyoti.jpg" alt="User-DP" /> <?php echo $_SESSION['name']; ?>
+            </button> -->
+            <!-- dropdown-menu-dark dropdown-menu-end -->
+        <!--    <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end" aria-labelledby="dropdownMenuButton1">
+                <li><a class="dropdown-item active" href="#">Profile</a></li>
+                <li>
+                    <hr class="dropdown-divider">
+                </li>
+                <li>
+                    <form method="POST" action="Ajax_Php/logout.php">
+                        <input class="dropdown-item" type="submit" value="Logout Me" name="logout"/>
+                    </form>
+                </li>
+            </ul>
+        </div> -->
+        <form method="POST" action="Ajax_Php/logout.php">
+                        <input class="btn btn-primary" type="submit" value="Logout Me" name="logout"/>
+                    </form>
 
-                    </ul>
-                </div>
-            </span>
-        </div>
+        <!-- </span>
+        </div> -->
     </div>
 </nav>
 
 <!-- Navbar Code  End -->
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 <div class="container playground p-5">
@@ -70,24 +93,13 @@
                     <img src="<?php echo $_SESSION['dp']; ?>" alt="User Dp">
                 </div>
 
-                <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        Dropdown button
-                    </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
-                    </ul>
-                </div>
-
                 <div class="homeTab-view-userdetails">
                     <h1><?php echo $_SESSION['name']; ?></h1>
                     <h5><?php echo $_SESSION['sex']; ?></h5>
                     <h5><?php echo $_SESSION['email']; ?></h5>
                     <h5><?php echo $_SESSION['contact']; ?></h5>
                 </div>
+
                 <div class="homeTab-view-dashboard">
                     <div class="totalnotes">
 
@@ -106,11 +118,10 @@
                         </div>
                         <div class="mb-3">
                             <!-- <label for="exampleFormControlInput1" class="form-label">Category</label> -->
-                            <select class="form-select" aria-label="Default select example" required>
-                                <option disabled selected>What you want to write ☻</option>
-                                <option value="1">Personal</option>
-                                <option value="2">Office</option>
-                                <option value="3">Love Life</option>
+                            <select class="form-select" id="getCategory" aria-label="Default select example" required>
+                                <!-- <option disabled selected>What you want to write ☻</option> -->
+                                <!-- <option value="Personal">Personal</option>    -->
+                                                                                                                         
                             </select>
                         </div>
                         <div class="mb-3">
