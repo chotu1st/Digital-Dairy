@@ -58,7 +58,8 @@
                 if (userText.value === c) {
                     // output.classList.add("correctCaptcha");
                     output.style.color = "Green"
-                    output.innerHTML = "Correct";                   
+                    output.innerHTML = "Correct";  
+                    document.getElementById("loginbtn").style.display = "block";
                     // alert("Correct");
                 } else {
                     // output.classList.add("incorrectCaptcha");

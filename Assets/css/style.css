@@ -2,6 +2,13 @@
 * {
   /* Chrome, Safari, Edge, Opera */
   /* Firefox */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-touch-callout: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: hidden;
 }
 * input::-webkit-outer-spin-button,
 * input::-webkit-inner-spin-button {
@@ -52,6 +59,19 @@
   background-color: #62b4fe;
   color: white;
 }
+.navbar .dropdown .dp-btn {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: #62b4fe;
+}
+.navbar .dropdown .dp-btn img {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 2px solid #62b4fe;
+  padding: 1px;
+}
 
 @keyframes bounce {
   from {
@@ -83,6 +103,49 @@
   border-radius: 50%;
   background-color: black;
   display: none;
+}
+.modal .modal-body .upload-btn-wrapper {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.modal .modal-body .btns {
+  border: 2px solid #ff1493;
+  padding: 4px;
+  border-radius: 50%;
+  background-color: #fff;
+}
+.modal .modal-body .btns img {
+  width: 20px;
+  height: 20px;
+  margin: 2px;
+}
+.modal .modal-body .btns img:hover {
+  cursor: pointer;
+}
+.modal .modal-body .upload-btn-wrapper input[type=file] {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+.modal .modal-body .borderOfRadio {
+  padding: 6px 8px;
+  outline: aliceblue;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  appearance: none;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.modal .modal-body .borderOfRadio:hover {
+  background-color: #fff;
+  border-color: #86b7fe;
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
 }
 .modal .modal-body .bulb-icon {
   float: right;
@@ -164,6 +227,93 @@
   text-align: center;
   font-size: 18px;
   outline: none;
+}
+.modal .modal-body .modal-footer #loginbtn {
+  display: none;
+}
+.modal .modal-body .star {
+  color: red;
+  font-size: 18px;
+  margin-left: 1px;
+}
+
+.playground {
+  margin: 5em;
+}
+.playground .tab-content {
+  padding: 3em 1em;
+}
+.playground .tab-content .homeTab-view {
+  display: flex;
+  flex-direction: row;
+}
+.playground .tab-content .homeTab-view-userdp img {
+  width: 14em;
+  height: auto;
+  border-radius: 6px;
+}
+.playground .tab-content .homeTab-view-userdetails {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  padding-left: 2em;
+}
+.playground .tab-content .homeTab-view-userdetails h1 {
+  color: #ff1493;
+  line-height: 2rem;
+}
+.playground .tab-content .homeTab-view-userdetails h5 {
+  color: #000;
+  line-height: 1.5rem;
+  font-weight: 400;
+}
+.playground .tab-content .noteTab-view {
+  display: flex;
+  flex-direction: row;
+}
+.playground .tab-content .noteTab-view-left {
+  width: 30%;
+}
+.playground .tab-content .noteTab-view-left .noteMSg {
+  font-size: 12px;
+  color: #cacac2;
+}
+.playground .tab-content .noteTab-view-left .savebtn input {
+  width: 100%;
+}
+.playground .tab-content .noteTab-view-right {
+  border: 1px solid lightslategrey;
+  border-radius: 4px;
+  height: min-content;
+  width: 70%;
+  margin: 0px 1em;
+}
+.playground .tab-content .adminTab-view {
+  width: 100%;
+}
+.playground .tab-content .adminTab-view .adminTab-view-top {
+  padding: 2rem 0;
+}
+.playground .tab-content .adminTab-view .adminTab-view-top form {
+  display: flex;
+  flex-direction: row;
+}
+.playground .tab-content .adminTab-view .adminTab-view-top form input[type=text] {
+  min-width: 18em;
+  max-width: 22em;
+  margin-right: 1rem;
+}
+.playground .tab-content .adminTab-view .adminTab-view-bottom input[type=text] {
+  padding: 6px 10px;
+  border: 1px solid lightgrey;
+  outline: none;
+  border-radius: 4px;
+}
+.playground .tab-content .adminTab-view .adminTab-view-bottom textarea {
+  overflow: hidden;
+}
+.playground .tab-content .adminTab-view .adminTab-view-bottom #deleteBtn, .playground .tab-content .adminTab-view .adminTab-view-bottom #updateBtn {
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=style.css.map */
