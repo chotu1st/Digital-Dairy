@@ -98,6 +98,7 @@
                     <h5><?php echo $_SESSION['sex']; ?></h5>
                     <h5><?php echo $_SESSION['email']; ?></h5>
                     <h5><?php echo $_SESSION['contact']; ?></h5>
+                    
                 </div>
 
                 <div class="homeTab-view-dashboard">
@@ -110,34 +111,32 @@
         <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
             <div class="noteTab-view">
                 <div class="noteTab-view-left">
-                    <form action="">
+                    <form action="" id="noteSavingForm">
                         <div class="mb-3">
-                            <!-- <label for="noteDate" class="form-label">Date</label> -->
+                           
                             <input placeholder="Write this note of date ?" class="form-control" id="noteDate"
                                 type="text" onfocus="(this.type='date')" required>
                         </div>
                         <div class="mb-3">
-                            <!-- <label for="exampleFormControlInput1" class="form-label">Category</label> -->
+                           
                             <select class="form-select" id="getCategory" aria-label="Default select example" required>
-                                <!-- <option disabled selected>What you want to write ☻</option> -->
-                                <!-- <option value="Personal">Personal</option>    -->
-                                                                                                                         
+                                                                                                                                                        
                             </select>
                         </div>
                         <div class="mb-3">
-                            <!-- <label for="noteDate" class="form-label">Date</label> -->
+                           
                             <input type="text" class="form-control" placeholder="What's your note title" maxlength="25"
                                 minlenght="3" id="noteTitle" required>
                         </div>
                         <div class="mb-3">
-                            <!-- <label for="exampleFormControlTextarea1" class="form-label">Write Note here</label> -->
+                           
                             <textarea class="form-control" placeholder="Write your note here ..."
-                                id="exampleFormControlTextarea1" rows="3" required></textarea>
+                                id="noteText" rows="3" required></textarea>
                             <p class="noteMSg">Note:- Write your note under 1000 Words</p>
                         </div>
                         <div class="savebtn my-4">
                             <!-- <button type="button" class="btn btn-outline-info">Save it</button> -->
-                            <input type="submit" class="btn btn-outline-info" value="Save it">
+                            <input type="submit" class="btn btn-outline-info" id="noteSave" value="Save it">
                         </div>
 
                     </form>
@@ -148,27 +147,14 @@
                         <table class="table table-striped m-0">
                             <thead>
                                 <tr>
-
                                     <th scope="col">Title</th>
                                     <th scope="col">Note</th>
                                     <th scope="col">Category</th>
                                     <th scope="col">Date Time</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Its all about learing</td>
-                                    <td>Aj maine bahut kuch sikh logo se kaise baat krna and all</td>
-                                    <td>Personal</td>
-                                    <td>08 Mar 2022 07:05 PM</td>
-                                </tr>
-                                <tr>
-                                    <td>Love at first sight</td>
-                                    <td>Pallavi Propose ki but mnn hote huye bhi mana kridya maine</td>
-                                    <td>Love Life</td>
-                                    <td>07 Mar 2022 01:05 PM</td>
-                                </tr>
-
+                            <tbody id="getCurrentNote">
+                                
                             </tbody>
                         </table>
                     </div>
@@ -188,20 +174,8 @@
                             <th scope="col">Date Time</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td>Its all about learing</td>
-                            <td>Aj maine bahut kuch sikh logo se kaise baat krna and all</td>
-                            <td>Personal</td>
-                            <td>08 Mar 2022 07:05 PM</td>
-                        </tr>
-                        <tr>
-                            <td>Love at first sight</td>
-                            <td>Pallavi Propose ki but mnn hote huye bhi mana kridya maine</td>
-                            <td>Love Life</td>
-                            <td>07 Mar 2022 01:05 PM</td>
-                        </tr>
-
+                    <tbody id="getAllNote">
+                       
                     </tbody>
                 </table>
             </div>
@@ -210,13 +184,13 @@
         <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
             <div class="adminTab-view">
                 <div class="adminTab-view-top">
-                    <form action="">
+                    <form action="" id="addCategory">
 
                         <input type="text" id="newCategory" class="form-control"
                             placeholder="Write new category here to add it" maxlength="20" minlenght="3" id="noteTitle"
                             required>
 
-                        <input type="submit" class="btn btn-outline-success" onClick="alertMsg()" value="Add Category">
+                        <input type="submit" class="btn btn-outline-success" id="newCategoryAdd" value="Add Category">
 
 
                     </form>
@@ -236,7 +210,8 @@
                                     <th scope="col" class="text-center">Delete</th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody id="updateNote">
+                                
                                 <tr>
                                     <td>
                                         <input type="text" class="form-control" value="Its all about learing"
@@ -275,6 +250,9 @@
 
 </div>
 
+<!-- user id -->
+<input type="hidden" name="" id="userID" value="<?php echo $_SESSION['userid'] ?>">
+
 <script>
 function alertMsg() {
 
@@ -283,7 +261,10 @@ function alertMsg() {
 
     alert(userid + " = " + category);
 }
+
+
 </script>
+
 <?php
     include('include/footer.php');   
 ?>

@@ -12,22 +12,22 @@ error_reporting(0);
 <!-- Navbar Code Start -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-                    <a class="navbar-brand" href="index.html">
-                        <img src="Assets/icon/Digital-Diary.png" class="brand-logo" alt="Digital-Diary">
-                    </a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
-                        aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">                        
-                        <span class="float-end d-flex ms-auto">
-                            <a class="nav-link btn-signin" data-bs-toggle="modal" href="#exampleModalToggle" role="button">Sign
-                                In</a>
-                            <a class="nav-link btn-signin white" data-bs-toggle="modal" href="#signUP" role="button" href="#">Sign
-                                Up</a>
-                        </span>
-                    </div>
-        
+        <a class="navbar-brand" href="index.html">
+            <img src="Assets/icon/Digital-Diary.png" class="brand-logo" alt="Digital-Diary">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <span class="float-end d-flex ms-auto">
+                <a class="nav-link btn-signin" data-bs-toggle="modal" href="#exampleModalToggle" role="button">Sign
+                    In</a>
+                <a class="nav-link btn-signin white" data-bs-toggle="modal" href="#signUP" role="button" href="#">Sign
+                    Up</a>
+            </span>
+        </div>
+
     </div>
 </nav>
 
@@ -127,7 +127,7 @@ error_reporting(0);
                 </div>
             </div>
             <div class="modal-footer">
-                <button class="btn btn-primary" data-bs-dismiss="modal" id="otpVerify" >Verify</button>
+                <button class="btn btn-primary" data-bs-dismiss="modal" id="otpVerify">Verify</button>
             </div>
         </div>
     </div>
@@ -193,8 +193,10 @@ error_reporting(0);
                         <label for="" class="form-label">Purpose</label>
                         <select class="form-select" name="purpose" id="purpose" aria-label="Default select example">
                             <option disabled selected>Select Your Age Group</option>
-                            <option value="personal">Personal</option>
-                            <option value="office">Office</option>
+                            <option value="Personal">Personal</option>
+                            <option value="Love">Love</option>
+                            <option value="School">School</option>
+                            <option value="College">College</option>
                         </select>
                     </div>
                     <div class="mb-0">

@@ -34,7 +34,7 @@
 $(document).ready(function () {
 
   $("#otpVerify").click(function () {
-
+      // console.log("this otpverify works");
     let vals1 = document.getElementById("val1").value;
     let vals2 = document.getElementById("val2").value;
     let vals3 = document.getElementById("val3").value;
@@ -46,7 +46,7 @@ $(document).ready(function () {
 
     if (getOtp2 === newotp2){
 
-      // alert("OTP Verified");
+       alert("OTP Verified");
       localStorage.removeItem("newOTP");
 
       var email = localStorage.getItem("email");
@@ -61,7 +61,7 @@ $(document).ready(function () {
         },
         cache: false,
         success: function (data) {
-          //  alert(data);
+            // alert(data);
            localStorage.removeItem("email");
            window.open("home.php","_self");
             

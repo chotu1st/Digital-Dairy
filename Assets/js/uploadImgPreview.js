@@ -16,6 +16,5 @@ function showPreview(event) {
         uploadBtn.style.boxShadow = "0px 0px 14px rgba(0, 0, 0, 0.38)";
 
         wrapper.style.position = "unset";
-
     }
 }
