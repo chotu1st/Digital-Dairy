@@ -9,7 +9,7 @@ $(document).ready(function() {
         var purpose = $("#purpose").val();
         var contact = $("#contact").val();
         var password = $("#password2").val();
-        console.log("ajax works");            
+        // console.log("ajax works");            
        
 
         if (name == '' || email == '' || contact == '' || password == '') {

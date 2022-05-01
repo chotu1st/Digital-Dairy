@@ -31,7 +31,7 @@
 
                         $userID = $row['userID'];
 
-                        $sql3 = "INSERT INTO `category`( `catergory`, `userid`) VALUES ('$purpose','$userID')";
+                        $sql3 = "INSERT INTO `category`( `category`, `userid`) VALUES ('$purpose','$userID')";
                         $result3 = mysqli_query($con, $sql3);
                         
                         if($result3){

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 19, 2022 at 07:52 AM
+-- Generation Time: May 01, 2022 at 09:02 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -40,10 +40,8 @@ CREATE TABLE `category` (
 INSERT INTO `category` (`id`, `category`, `userid`) VALUES
 (1, 'Personal', 1),
 (2, 'College', 1),
-(3, 'School', 12),
-(4, 'Love', 13),
-(5, 'Love', 12),
-(6, 'Personal', 12);
+(7, 'College', 7),
+(8, 'Home', 7);
 
 -- --------------------------------------------------------
 
@@ -65,12 +63,15 @@ CREATE TABLE `notes` (
 --
 
 INSERT INTO `notes` (`noteID`, `userID`, `noteTitle`, `note`, `categoryID`, `timeStamp`) VALUES
-(1, 13, 'Personal', 'Do shopping for Rahul\'s Bday', 3, '2022-04-15 17:46:50'),
-(2, 12, 'Science', 'Science class achi lgi bahut ...', 3, '2022-04-19 01:53:02'),
-(3, 12, 'math', 'sabse bekr subject', 3, '2022-04-19 01:54:28'),
-(4, 12, 'fokt', 'thora jada hi fokt', 3, '2022-04-19 01:57:59'),
-(5, 12, 'jjjk', 'gfnfhjfgjfhfj', 3, '2022-04-19 02:00:52'),
-(6, 12, 'Play', 'game khele bahut maja aaya aj', 3, '2022-04-19 02:03:43');
+(7, 1, 'Shopping ', 'aloo bhuiya', 1, '2022-04-22 14:20:20'),
+(8, 1, 'Love', 'college waala love', 2, '2022-04-22 14:20:40'),
+(9, 1, 'Kavita', 'Kvita is nice bro â™¥', 1, '2022-04-22 14:21:05'),
+(10, 1, 'qkm,d', 'nw,fw,kh', 2, '2022-04-22 14:21:18'),
+(11, 7, 'Python Lap', 'Python is very intersting language for me ...', 7, '2022-04-25 15:09:26'),
+(12, 7, 'Mummy', 'Mummy ne aaj bahut acha khana banaya aur sabse jada maine kahaya....â˜»        \n\nAur mujhe bahut psnd aaya', 8, '2022-04-25 15:11:40'),
+(13, 7, 'Project Work', 'We making a great project with support of our teacher Mayank and Pratush sir ', 7, '2022-04-25 15:13:38'),
+(14, 7, 'Bhai', 'Bhai ne aj freez me rakhi sari mithai kha li â˜º', 8, '2022-04-25 15:14:58'),
+(15, 7, 'laptop ', 'Papa aur bhai ne mil kr mujhe laptop gift kiya\n', 8, '2022-04-25 15:16:05');
 
 -- --------------------------------------------------------
 
@@ -98,16 +99,7 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`userID`, `name`, `gender`, `email`, `contact`, `age_group`, `dp`, `perpose`, `password`, `email_verified`, `contact_verifed`) VALUES
 (1, 'Pallavi', 'Female', 'pallavi21@gmail.com', '7000468969', '18-24', 'Assets/img/jyoti.jpg', 'personal', '123456', 0, 0),
-(2, 'hero', 'Male', 'ddjkf@dkfj', '1234567899', '0-17', '', 'personal', '', 0, 0),
-(3, 'MAnvi', 'Male', 'manvi@1234', '1234569878', '18-24', '', 'personal', 'dv123456', 0, 0),
-(5, 'pankaj', 'Male', 'manvi@123456558', '9111525164', '0-17', '', 'office', 'daddddsda', 0, 0),
-(7, 'Kavita', 'Male', 'kavita@gmail.com', '0123456789', '18-24', '', 'personal', '1234658', 0, 0),
-(8, 'Kavita', 'Male', 'kavita@outlook.com', '1234567897', '18-24', '', 'personal', '987654', 0, 0),
-(9, 'rahul', 'Male', 'rahul@12', '1597536548', '0-17', '', 'personal', 'jfhjshfsk@', 0, 0),
-(10, 'ramu', 'Male', 'ramu@123', '7418529635', '25-34', '', 'office', '1234', 0, 0),
-(11, 'Yogesh Singh', 'Male', 'yogesh@123', '9111555555', '18-24', '', 'Office', '123456', 0, 0),
-(12, 'Ram ji', 'Male', 'ram@123', '2222222222', '0-17', '', 'School', '12345', 0, 0),
-(13, 'Shyam ', 'Male', 'shyam@123', '4444444444', '0-17', '', 'Love', '123', 0, 0);
+(7, 'Kavita', 'Male', 'kavita@mitindore.co.in', '0123456789', '18-24', 'Assets/img/jyoti.jpg', 'personal', '1234658', 0, 0);
 
 --
 -- Indexes for dumped tables
@@ -124,8 +116,8 @@ ALTER TABLE `category`
 --
 ALTER TABLE `notes`
   ADD PRIMARY KEY (`noteID`),
-  ADD KEY `userID` (`userID`),
-  ADD KEY `categoryID` (`categoryID`);
+  ADD KEY `categoryID` (`categoryID`),
+  ADD KEY `notes_ibfk_1` (`userID`);
 
 --
 -- Indexes for table `users`
@@ -143,19 +135,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `notes`
 --
 ALTER TABLE `notes`
-  MODIFY `noteID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `noteID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `userID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `userID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- Constraints for dumped tables
@@ -165,7 +157,7 @@ ALTER TABLE `users`
 -- Constraints for table `notes`
 --
 ALTER TABLE `notes`
-  ADD CONSTRAINT `notes_ibfk_1` FOREIGN KEY (`userID`) REFERENCES `users` (`userID`) ON DELETE NO ACTION ON UPDATE CASCADE,
+  ADD CONSTRAINT `notes_ibfk_1` FOREIGN KEY (`userID`) REFERENCES `users` (`userID`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `notes_ibfk_2` FOREIGN KEY (`categoryID`) REFERENCES `category` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 COMMIT;
 
